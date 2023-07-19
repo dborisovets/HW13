@@ -1,0 +1,16 @@
+{
+  "Common": {
+    "Browser": "Chrome",
+    "DemoQAUrls": {
+        "Buttons": "https://demoqa.com/buttons",
+        "Checkbox": "https://demoqa.com/checkbox",
+        "RadioButton": "https://demoqa.com/radio-button",
+        "Webtables": "https://demoqa.com/webtables",
+        "Links": "https://demoqa.com/links"
+    }
+  },
+  "TestData": {
+    "UserName": "Johny Depp",
+    "UserEmail": "id@mail.ru"
+  }
+}
