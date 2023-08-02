@@ -16,7 +16,7 @@ namespace HW13.PageObjects.DemoQA.Elements
         private readonly MyWebElement _department = new(By.Id("department"));
         private readonly MyWebElement _submit = new(By.Id("submit"));
 
-        public Boolean IsWebTablesPageWorkable() => _table.Displayed  && _searchBox.Displayed && _addButton.Displayed;
+        public bool IsWebTablesPageWorkable() => _table.Displayed  && _searchBox.Displayed && _addButton.Displayed;
 
         public void AddNewMember(string firstName, string lastName, string userEmail, string age,  string salary, string department)
         {
@@ -35,6 +35,7 @@ namespace HW13.PageObjects.DemoQA.Elements
             _searchBox.SendKeys(firstName);
             var locator = $"//div[contains(text(),'{firstName}')]";
             MyWebElement expectedCell = new (By.XPath(locator));
+            
             return expectedCell.Displayed;
         }
     }

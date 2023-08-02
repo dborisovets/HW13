@@ -12,13 +12,13 @@ namespace HW13.PageObjects.DemoQA.Elements
         private readonly MyWebElement _downloadsCheckbox = new(By.XPath("//label[@for='tree-node-downloads']//span[@class='rct-checkbox']"));
         private readonly MyWebElement _noticationMessage = new(By.XPath("//*[@id='result']"));
 
-        public Boolean IsHomeCheckBoxDisplayed() => _homeCheckbox.Displayed;
+        public bool IsHomeCheckBoxDisplayed() => _homeCheckbox.Displayed;
         
-        public Boolean IsDesktopCheckboxDisplayed() => _desktopCheckbox.Displayed;
+        public bool IsDesktopCheckboxDisplayed() => _desktopCheckbox.Displayed;
         
-        public Boolean IsDocumentsCheckboxDisplayed() => _documentsCheckbox.Displayed;
+        public bool IsDocumentsCheckboxDisplayed() => _documentsCheckbox.Displayed;
 
-        public Boolean IsDownloadsCheckboxDisplayed() => _downloadsCheckbox.Displayed;
+        public bool IsDownloadsCheckboxDisplayed() => _downloadsCheckbox.Displayed;
         
         public void ExpandHomeCheckBox() => _arrowHomeCheckbox.Click();
         

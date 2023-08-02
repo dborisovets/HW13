@@ -13,7 +13,6 @@ namespace HW13.Data
         public static string? DemoQARadioButtonPageUrl { get; set; }
         public static string? DemoQAWebTablesPageUrl { get; set; }
         public static string? DemoQALinksPageUrl { get; set; }
-
         public static IConfiguration TestConfiguration { get; } = new ConfigurationBuilder().AddJsonFile("testsettings.json").Build();
 
         static TestSettings()
