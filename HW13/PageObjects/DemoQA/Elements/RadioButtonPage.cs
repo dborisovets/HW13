@@ -5,9 +5,6 @@ namespace HW13.PageObjects.DemoQA.Elements
 {
     public class RadioButtonPage : BaseDemoQAPage
     {
-        public const string SelectedYesMessage = "You have selected Yes";
-        public const string SelectedImressiveMessage = "You have selected Impressive";
-
         private readonly MyWebElement _yesRadioButton = new(By.XPath("//label[@class='custom-control-label' and @for='yesRadio']"));
         private readonly MyWebElement _noRadioButton = new(By.Id("noRadio"));
         private readonly MyWebElement _impressiveRadioButton = new(By.XPath("//label[@class='custom-control-label' and @for='impressiveRadio']"));
@@ -23,7 +20,6 @@ namespace HW13.PageObjects.DemoQA.Elements
 
         public void ClickOnImpressiveRadioButton() => _impressiveRadioButton.Click();
 
-        public String GetResultMessage() => _resultElement.Text;
-
+        public string GetResultMessage() => _resultElement.Text;
     }
 }

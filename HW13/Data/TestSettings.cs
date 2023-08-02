@@ -14,13 +14,10 @@ namespace HW13.Data
         public static string? DemoQAWebTablesPageUrl { get; set; }
         public static string? DemoQALinksPageUrl { get; set; }
 
-        //after build you will contain context of our json file
-
         public static IConfiguration TestConfiguration { get; } = new ConfigurationBuilder().AddJsonFile("testsettings.json").Build();
 
         static TestSettings()
         {
-            //easy way to get value from json file by keys like these
             Enum.TryParse(TestConfiguration["Common:Browser"], out Browsers browser);
             Browser = browser;
             UserName = TestConfiguration["TestData:UserName"];

@@ -5,7 +5,6 @@ namespace HW13.PageObjects.DemoQA.Elements
 {
     public class WebTablesPage : BaseDemoQAPage
     {
-
         private readonly MyWebElement _table = new(By.XPath("//div[@class='ReactTable -striped -highlight']"));
         private readonly MyWebElement _searchBox = new(By.Id("searchBox"));
         private readonly MyWebElement _addButton = new(By.Id("addNewRecordButton"));
@@ -17,32 +16,26 @@ namespace HW13.PageObjects.DemoQA.Elements
         private readonly MyWebElement _department = new(By.Id("department"));
         private readonly MyWebElement _submit = new(By.Id("submit"));
 
-        public Boolean IsWebTablesPageWorkable()
-        {            
-            return _table.Displayed 
-                && _searchBox.Displayed 
-                && _addButton.Displayed;
-        }
+        public Boolean IsWebTablesPageWorkable() => _table.Displayed  && _searchBox.Displayed && _addButton.Displayed;
 
         public void AddNewMember(string firstName, string lastName, string userEmail, string age,  string salary, string department)
         {
             _addButton.Click();
-            _firstName.Sendkeys(firstName);
-            _lastName.Sendkeys(lastName);
-            _userEmail.Sendkeys(userEmail);
-            _age.Sendkeys(age);
-            _salary.Sendkeys(salary);
-            _department.Sendkeys(department);
+            _firstName.SendKeys(firstName);
+            _lastName.SendKeys(lastName);
+            _userEmail.SendKeys(userEmail);
+            _age.SendKeys(age);
+            _salary.SendKeys(salary);
+            _department.SendKeys(department);
             _submit.Click();
         }
 
-        public Boolean isMemberExistInTable(string firstName)
+        public bool IsMemberExistInTable(string firstName)
         {
             _searchBox.SendKeys(firstName);
-            string locator = "//div[contains(text(),'" + firstName + "')]";
-            MyWebElement expectedCell = new MyWebElement(By.XPath(locator));
+            var locator = $"//div[contains(text(),'{firstName}')]";
+            MyWebElement expectedCell = new (By.XPath(locator));
             return expectedCell.Displayed;
         }
-
     }
 }

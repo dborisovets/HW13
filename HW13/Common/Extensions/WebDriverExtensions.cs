@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using HW13.Common.Drivers;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
 namespace HW13.Common.Extensions
@@ -15,10 +16,11 @@ namespace HW13.Common.Extensions
                 webDriverWait.PollingInterval = (TimeSpan)pollingInterval;
             }
             webDriverWait.IgnoreExceptionTypes(exceptionTypes); // allows us to ignore any type of exception (e.g. StaleElementsReferenceException)
-            
             return webDriverWait;
         }
         // extension method to perform FindElement with explicit wait
         public static IWebElement GetWebElementWhenExist(this IWebDriver driver, By by) => driver.GetWebDriverWait().Until(drv => drv.FindElement(by));
+
+        public static void SwitchToTab(string windowsName) => WebDriverFactory.Driver.SwitchTo().Window(windowsName);
     }
 }

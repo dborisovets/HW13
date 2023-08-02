@@ -5,8 +5,6 @@ namespace HW13.PageObjects.DemoQA.Elements
 {
     public class CheckBoxPage : BaseDemoQAPage
     {
-        public const string expectedMessage = "You have selected : home desktop notes commands documents workspace react angular veu office public private classified general downloads wordFile excelFile";
-
         private readonly MyWebElement _homeCheckbox = new(By.XPath("//input[@id='tree-node-home']/following-sibling::span[@class='rct-checkbox']"));
         private readonly MyWebElement _arrowHomeCheckbox = new(By.XPath("//button[@title='Toggle']"));
         private readonly MyWebElement _desktopCheckbox = new(By.XPath("//label[@for='tree-node-desktop']//span[@class='rct-checkbox']"));
@@ -15,7 +13,6 @@ namespace HW13.PageObjects.DemoQA.Elements
         private readonly MyWebElement _noticationMessage = new(By.XPath("//*[@id='result']"));
 
         public Boolean IsHomeCheckBoxDisplayed() => _homeCheckbox.Displayed;
-             
         
         public Boolean IsDesktopCheckboxDisplayed() => _desktopCheckbox.Displayed;
         
@@ -28,6 +25,5 @@ namespace HW13.PageObjects.DemoQA.Elements
         public void HomeCheckBoxCkick() => _homeCheckbox.Click();
 
         public string GetNotificationMessage() => _noticationMessage.Text.Replace("\r\n", " ");
-
     }
 }

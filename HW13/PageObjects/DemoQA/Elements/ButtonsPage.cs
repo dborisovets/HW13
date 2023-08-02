@@ -5,10 +5,6 @@ namespace HW13.PageObjects.DemoQA.Elements
 {
     public class ButtonsPage : BaseDemoQAPage
     {
-        public const string doubleClickmeButtonMessage = "You have done a double click";
-        public const string rightClickmeButtonMessage = "You have done a right click";
-        public const string clickmeButtonMessage = "You have done a dynamic click";
-
         private readonly MyWebElement _doubleClickmeButton = new (By.Id("doubleClickBtn"));
         private readonly MyWebElement _rightClickmeButton = new (By.Id("rightClickBtn"));
         private readonly MyWebElement _clickmeButton = new (By.XPath("//button[@id='rightClickBtn']/parent::div/following-sibling::div/button"));
@@ -23,11 +19,10 @@ namespace HW13.PageObjects.DemoQA.Elements
 
         public void SingleClickOnClickMeButton() => _clickmeButton.Click();
 
-        public String GetDoubleClickMessage() => _doubleClickMessage.Text;
+        public string GetDoubleClickMessage() => _doubleClickMessage.Text;
 
-        public String GetRightClickMessage() => _rightClickMessage.Text;
+        public string GetRightClickMessage() => _rightClickMessage.Text;
 
-        public String GetDynamicClickMessage() => _dynamicClickMessage.Text;
-
+        public string GetDynamicClickMessage() => _dynamicClickMessage.Text;
     }
 }

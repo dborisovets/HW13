@@ -48,29 +48,9 @@ namespace HW13.Common.WebElements
             }
         }
 
-        public void ClickAndWait()
-        {
-            try
-            {
-                WebElement.Click();
-            }
-            catch (ElementClickInterceptedException)
-            {
-                ScrollIntoView();
-                WebElement.Click();
-            }
-            Thread.Sleep(500);
-        }
+        public void RightClick() => BaseTest.Actions.ContextClick(WebElement).Build().Perform();
 
-        public void RightClick()
-        {
-            WebDriverFactory.Actions.ContextClick(WebElement).Build().Perform();
-        }
-
-        public void DoubleClick()
-        {
-            WebDriverFactory.Actions.DoubleClick(WebElement).Build().Perform();
-        }
+        public void DoubleClick() => BaseTest.Actions.DoubleClick(WebElement).Build().Perform();
 
         public IWebElement FindElement(By by) => WebElement.FindElement(by);
 
@@ -86,18 +66,13 @@ namespace HW13.Common.WebElements
 
         public ISearchContext GetshadomRoot() => WebElement.GetShadowRoot();
 
-        public void Sendkeys(string text) => WebElement.SendKeys(text);
-
         public void Submit() => WebElement.Submit();
 
-        public void ScrollIntoView() => WebDriverFactory.JavaScriptExecutor.ExecuteScript("arguments [0].scrollIntoView()", WebElement);
+        public void ScrollIntoView() => BaseTest.JavaScriptExecutor.ExecuteScript("arguments [0].scrollIntoView()", WebElement);
 
         public string GetValueofClassAttribute() => GetAttribute("class");
 
-        public void SendKeys(string text)
-        {
-            WebElement.SendKeys(text);
-        }
+        public void SendKeys(string text) => WebElement.SendKeys(text);
 
         public string GetCssValue(string propertyName)
         {
